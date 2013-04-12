@@ -23,7 +23,7 @@ ADMINS = (
     ('Juan Carlos Cayetano', 'jc@brainn.co'),
 )
 
-#AUTH_PROFILE_MODULE = 'profile.Profile'
+AUTH_PROFILE_MODULE = 'profile.Profile'
 
 MANAGERS = ADMINS
 
@@ -127,10 +127,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'radiotik.home',
+    'radiotik.profile',
+
     'gunicorn',
     'storages',
 
-    #'django_facebook'
+    'django_facebook'
 
 )
 

@@ -1,17 +1,20 @@
 from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
+from django.conf import settings
+from django.contrib.auth.views import logout
+from django.contrib import admin
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'radiotik.views.home', name='home'),
-    # url(r'^radiotik/', include('radiotik.foo.urls')),
+urlpatterns = patterns('django.views.generic.simple',
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^$', 'direct_to_template', {'template':'home.html'}),
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-)
+    url(r'^logout/$', logout, {'next_page' : '/'}),
+
+	url(r'^facebook/', include('django_facebook.urls')),
+	url(r'^accounts/', include('django_facebook.auth_urls')),
+
+    #url(r'^profile/', include('radiotik.profile.urls')),
+    
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
