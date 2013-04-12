@@ -129,6 +129,8 @@ INSTALLED_APPS = (
 
     'radiotik.home',
     'radiotik.profile',
+    'radiotik.stations',
+    'radiotik.songs',
 
     'gunicorn',
     'storages',
