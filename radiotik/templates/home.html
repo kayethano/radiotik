@@ -116,14 +116,14 @@
 							</div>
 					</form>
 
-													<form action="{% url facebook_connect %}?facebook_login=1" method="post">{% csrf_token %}
-									<a class="blue button return" href="javascript:void(0);" onclick="F.connect(this.parentNode);">
-									Inicio con Facebook
-									</a>
-									<input type="hidden" value="{{ request.path }}" name="next" />
-									<input type="hidden" value="{{ request.path }}" name="register_next" />
-									<input type="hidden" value="{{ request.path }}" name="error_next" />
-								</form>
+					<form action="{% url facebook_connect %}?facebook_login=1" method="post">{% csrf_token %}
+						<a class="blue button return" href="javascript:void(0);" onclick="F.connect(this.parentNode);">
+							Inicio con Facebook
+						</a>
+						<input type="hidden" value="{{ request.path }}" name="next" />
+						<input type="hidden" value="{{ request.path }}" name="register_next" />
+						<input type="hidden" value="{{ request.path }}" name="error_next" />
+					</form>
 					
 				</div>
 			</div>
