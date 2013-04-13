@@ -3,7 +3,7 @@ import os, sys
 import dj_database_url
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    #'django_facebook.context_processors.facebook',
+    'django_facebook.context_processors.facebook',
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
@@ -108,7 +108,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    #'django_facebook.auth_backends.FacebookBackend',
+    'django_facebook.auth_backends.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -135,7 +135,7 @@ INSTALLED_APPS = (
     'gunicorn',
     'storages',
 
-    'django_facebook'
+    'django_facebook',
 
 )
 
@@ -168,7 +168,7 @@ LOGGING = {
     }
 }
 
-LOGIN_REDIRECT_URL = '/'
+FACEBOOK_LOGIN_DEFAULT_REDIRECT = '/welcome/'
 
 #Facebook Settings
 FACEBOOK_APP_ID = '181294148690513'

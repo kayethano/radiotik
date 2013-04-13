@@ -1,5 +1,54 @@
-{% extends "base.html" %}
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<title></title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" />
+	</head>
+	<body>
+		{% include "header.html" %}
+		{% block content %}
 
-{% block content %}
-
-{% endblock %}
+		{% endblock %}
+		{% include "footer.html" %}
+		<script>
+			/* Move legends */
+			$(window).load(function () {
+				var defaultTop = $($('.legend')[0]).css('top');
+				defaultTop = parseInt(defaultTop);
+				
+				$('#button-play').on('click', function () {
+					var legends = $('.legend');
+					$(legends[0]).animate({left: '0px'});
+					$(legends[1]).animate({left: '100%'});
+					$(legends[2]).animate({left: '300%'});
+				});
+				
+				$('#button-create').on('click', function () {
+					var legends = $('.legend');
+					$(legends[0]).animate({left: '-200%'});
+					$(legends[1]).animate({left: '-100%'});
+					$(legends[2]).animate({left: '0px'});
+				});
+				
+				$('.return').on('click', function () {
+					var legends = $('.legend');
+					$(legends[0]).animate({left: '-100%'});
+					$(legends[1]).animate({left: '0px'});
+					$(legends[2]).animate({left: '200%'});
+				});
+				
+				$('#user-login').on('click', function () {
+					$('.legend').fadeOut('fast');
+					$('#registro').fadeIn('fast');
+				});
+				
+				$('#hide-register').on('click', function () {
+					$('.legend').fadeIn('fast');
+					$('#registro').fadeOut('fast');
+				});
+			});
+		</script>
+	</body>
+</html>

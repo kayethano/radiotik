@@ -1,0 +1,340 @@
+/* Imported fonts from Google Web Fonts */
+@import url("http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic");
+@import url("http://fonts.googleapis.com/css?family=Sanchez");
+
+/* Complementary colors calculated from salmon */
+/*
+	CERULEAN BLUE: 3082c5;
+	SALMON: c53037
+	MINT GREEN: 30c574
+*/
+
+* {
+	outline: none;
+}
+
+html, body {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	min-width: 1024px; /* TEMP */
+	background: #555;
+	
+	font-family: "Muli", sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	
+	letter-spacing: -0.1em;
+}
+
+.clear-fix {
+	clear: both;
+	height: 0px;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.text-shadow {
+	text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.5);
+}
+
+a.button {
+	color: white;
+	background: gray;
+	padding: 0.25em 1em;
+	
+	text-decoration: none;
+	
+	font-family: "Muli", sans-serif;
+	
+	cursor: pointer;
+	
+	box-shadow: 0em 0em 0.25em rgba(0, 0, 0, 0.5),
+		inset 0em -0.5em 1em rgba(0, 0, 0, 0.25);
+	border-radius: 0.1em;
+}
+
+a.button:hover {
+	box-shadow: 0em 0em 0.25em rgba(0, 0, 0, 0.5);
+}
+
+a.button:active {
+	box-shadow: 0em 0em 0.25em rgba(0, 0, 0, 0.5),
+		inset 0em 0.5em 1em rgba(0, 0, 0, 0.25);
+	text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.25);
+}
+
+a.button.salmon {
+	background: #c53037;
+}
+
+a.button.blue {
+	background: #3082c5;
+}
+
+a.button.green {
+	background: #30c574;
+}
+
+/* FORM ELEMENTS */
+input, select, textarea {
+	font-family: "Muli", sans-serif;
+	font-weight: 300;
+	font-size: 1em;
+	
+	border: 0px;
+}
+
+label {
+	margin-right: 1em;
+}
+
+/* HEADER */
+div#header {
+	color: white;
+	
+	position: fixed;
+	z-index: 9999;
+	top: 0px;
+	
+	background: black;
+	background: rgba(0, 0, 0, 0.75);
+	width: 100%;
+	border-bottom: 1px solid black;
+	border-top: 0.25em solid #c53037;
+	
+	line-height: 4em; /* 2em + 2em = 4em */
+}
+
+div#header a.logo {
+	padding: 0em 2em;
+}
+
+div#header img {
+	height: 2em;
+	vertical-align: middle;
+}
+
+div#header div.top-links {
+	padding: 0px 1em;
+	float: right;
+}
+
+div#header div.top-links a {
+	color: white;
+	text-decoration: none;
+	padding: 0px 1em;
+	padding: 1.25em 1em 1.4em 1em
+}
+
+div#header div.top-links a:hover {
+	background: rgba(255, 255, 255, 0.25);
+}
+
+/* PAGE */
+div#page {
+	height: 100%;
+}
+
+/* Cover */
+div.cover {
+	position: relative;
+	overflow: hidden;
+}
+
+div.cover div.background img {
+	width: 100%;
+}
+
+div.cover div.legend {
+	color: white;
+	font-family: "Sanchez", Times;
+
+	position: absolute;
+	font-size: 3em;
+	line-height: 2.5em;
+	
+	text-align: center;
+	width: 100%;
+	
+	top: 35%;
+	margin-top: -2em;
+}
+
+div.legend div.content {
+	margin: 0px 25%;
+	font-size: 0.4em;
+	line-height: 1em;
+}
+
+div.content .text-shadow {
+	text-shadow: 0.2em 0.2em 0.1em rgba(0, 0, 0, 0.5);
+}
+
+div.cover input {
+	width: 50%;
+	font-size: 0.5em;
+	padding: 0.5em 1em;
+	border-radius: 2em;
+}
+
+div.cover a.return {
+	font-size: 0.5em;
+}
+
+/* REGISTER AREA */
+div.cover div.register {
+	color: white;
+	
+	position: absolute;
+	font-size: 1em;
+	
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+div.register h1 {
+	width: 100%;
+	text-align: center;
+	margin-top: 3em;
+}
+
+div.register select {
+	width: 55%;
+}
+
+div.register select.small {
+	width: 15%;
+	margin-right: 3.3333%;
+}
+
+div.register form {
+	padding: 0px 25%;
+	text-align: right;
+}
+
+div.register input {
+	font-size: 1em;
+	border-radius: 0.25em;
+}
+
+div.register input.checkbox {
+	width: 1em;
+}
+
+div.register label.long {
+	width: 50%;
+display: inline-block;
+text-align: left;
+}
+
+div.register a.button {
+	font-size: 1em;
+}
+
+/* BUTTONS */
+.button-action {
+	font-size: 0.6em;
+
+	position: absolute;
+	top: 150%;
+	
+	background: gray;
+	height: 200px;
+	width: 200px;
+	
+	border-radius: 100%;
+	cursor: pointer;
+	
+	box-shadow: inset 0px -50px 100px rgba(0, 0, 0, 0.25),
+	 inset 0px 50px 100px rgba(255, 255, 255, 0.25),
+	 0px 0px 25px rgba(0, 0, 0, 0.25);
+}
+
+.button-action:hover {
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+}
+
+.button-action:active {
+	box-shadow: inset 0px 50px 100px rgba(0, 0, 0, 0.25),
+	 inset 0px -50px 100px rgba(255, 255, 255, 0.25),
+	 0px 0px 25px rgba(0, 0, 0, 0.25);
+}
+
+.button-action img {
+	margin-top: 10%;
+	height: 80%;
+	line-height: 200px;
+	vertical-align: middle;
+}
+
+#button-play {
+	background: #30c574;
+	left: 30%;
+	margin-left: -50px;
+}
+
+#button-create {
+	background: #E2757A;
+	right: 30%;
+	margin-right: -50px;
+}
+
+
+/* DESCRIPTION */
+div.description {
+	padding: 3em 1em;
+	color: white;
+}
+
+div.description div.column {
+	font-size: 2em;
+	
+	width: 25%; /*30%antes*/
+	margin: 0px 4.1%; /*1.6%antes*/
+	
+	float: left;
+	text-align: center;
+}
+
+div.description img {
+	width: 100%;
+}
+
+/* FOOTER */
+div#footer {
+	color: white;
+	background: #c53037;
+	
+	padding: 1em;
+}
+
+div#footer a {
+	color: white;
+}
+
+div#footer div.links a {
+	padding-right: 0.5em;
+}
+
+div.social a {
+	padding-left: 0.5em;
+}
+
+div.social img {
+	height: 2em;
+}
+
+div#footer div {
+	padding: 0.5em 0px;
+}

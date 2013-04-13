@@ -1,0 +1,12 @@
+		<div id="header">
+			<a class="logo float-left" href="/"><img src="{{ MEDIA_URL }}logo.png" alt="logo" /></a>
+			
+			<div class="top-links float-right">
+				<a class="link" href="">Top 25</a>
+				{% if not user.is_authenticated %}
+				<a id="user-login" class="link" href="#">Iniciar sesión</a>
+				{% else %}
+				<a id="user-logout" class="link" href="/logout/">Cerrar Sesión</a>
+				{% endif %}
+			</div>
+		</div>

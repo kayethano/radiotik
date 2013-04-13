@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include 'django_facebook/_facebook_js.html' %}
+
+		<div id="page">
+			<div class="cover">
+				<div class="background"><img src="{{ MEDIA_URL }}cover.jpg" alt="cover" /></div>
+								
+				<div class="legend" style="left: -100%">
+					<span class="text-shadow">¿Qué quieres escuchar?</span><br/>
+					<input type="text" placeholder="Ej. Rock, Pop, Lana del Rey, etc." /><br/>
+					<a class="button return">Regresar</a>
+				</div>
+				<div class="legend">
+					<span class="text-shadow">El dominio total del sonido.</span><br/>
+					
+					<div id="button-play" class="button-action">
+						<img class="" src="{{ MEDIA_URL }}icons/headphones.png"/><br/>
+						<span class="text-shadow">Escuchar</span>
+					</div>
+					<div id="button-create" class="button-action">
+						<img class="" src="{{ MEDIA_URL }}icons/microphone-2.png"/><br/>
+						<span class="text-shadow">Crear</span>
+					</div>
+				</div>
+				
+				<div id="estacion" class="legend register" style="left: 200%">
+					<h2>&nbsp;</h2>
+					<h1>Registro de estación</h1>
+					<form action="HOLA">
+						
+						<p>
+							<label>Nombre de estación</label>
+							<input name="" type="text" placeholder="Purikura" /><br/>
+							
+							<label>Slogan de la estación</label>
+							<input name="" type="text" placeholder="Doe" /><br/>
+							
+							<label>Imagen de la estación</label>
+							<input name="" type="file" placeholder="john.doe" /><br/>
+							
+							<label>Idioma</label>
+							<select name="">
+								<option></option>
+								<option>Español</option>
+							</select><br/>
+							
+							<label>Zona horaria</label>
+							<select name="">
+								<option></option>
+								<option>-6GTM</option>
+							</select><br/>
+							
+							<label>Géneros</label>
+							<input name="" type="text" placeholder="John Doe" /><br/>
+							<label>Géneros favoritos</label>
+							<input name="" type="text" placeholder="Pop, Rock" /><br/>
+							
+						</p>
+							
+							<div style="padding: 1em 0px; font-size: 1.25em;">
+								<a class="button return">Regresar</a>
+								<a class="green button return" href="javascript:$($('form')[0]).submit();">Continuar</a>
+							</div>
+					</form>
+
+				</div>
+				
+				<div id="registro" class="register" style="display: none">
+					<h1>Registro</h1>
+					<form action="HOLA">
+						
+						<p>
+							<label>Nombre</label>
+							<input name="" type="text" placeholder="John" /><br/>
+							<label>Apellido</label>
+							<input name="" type="text" placeholder="Doe" /><br/>
+							<label>Nombre de usuario</label>
+							<input name="" type="text" placeholder="john.doe" /><br/>
+							<label>Correo electrónico</label>
+							<input name="" type="text" placeholder="john@example.com" /><br/>
+							<label>Fecha de nacimiento</label>
+							<select name="" class="small"></select><select class="small"></select><select class="small"></select><br/>
+							<label>Género</label>
+							<select name="">
+								<option>Masculino</option>
+								<option>Femenino</option>
+							</select>
+						</p>
+						
+						
+						<!-- Division -->
+						<p>
+							<label>Pais</label>
+							<select name="">
+								<option></option>
+								<option>México</option>
+							</select><br/>
+							<label>Ciudad</label>
+							<input name="" type="text" placeholder="John Doe" /><br/>
+							<label>Idioma</label>
+							<select name=""></select><br/>
+							<label>Géneros favoritos</label>
+							<input name="" type="text" placeholder="John Doe" /><br/>
+							<input name="" class="checkbox" type="checkbox" />
+							<label class="long">Notificaciones</label>
+						</p>
+							
+							<div style="padding: 1em 0px; font-size: 1.25em;">
+								<a id="hide-register" class="button">Regresar</a>
+
+								<a class="green button return" href="javascript:$($('form')[0]).submit();">Continuar</a>
+
+							</div>
+					</form>
+
+													<form action="{% url facebook_connect %}?facebook_login=1" method="post">{% csrf_token %}
+									<a class="blue button return" href="javascript:void(0);" onclick="F.connect(this.parentNode);">
+									Inicio con Facebook
+									</a>
+									<input type="hidden" value="{{ request.path }}" name="next" />
+									<input type="hidden" value="{{ request.path }}" name="register_next" />
+									<input type="hidden" value="{{ request.path }}" name="error_next" />
+								</form>
+					
+				</div>
+			</div>
+			<div class="description">
+				<div class="column">
+					<img src="{{ MEDIA_URL }}icons/radio.png" />
+					<span>Escucha radio al instante.</span>
+				</div>
+				<div class="column">
+					<img src="{{ MEDIA_URL }}icons/streaming.png" />
+					<span>Tu estación de radio en 1, 2, 3.</span>
+				</div>
+				<div class="column">
+					<img src="{{ MEDIA_URL }}icons/graph.png" />
+					<span>Gana dinero aumentando tu rating.</span>
+				</div>
+				
+				<div class="clear-fix">&nbsp;</div>
+			</div>
+		</div>
+{% endblock %}

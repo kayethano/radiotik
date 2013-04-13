@@ -9,12 +9,12 @@ admin.autodiscover()
 urlpatterns = patterns('django.views.generic.simple',
 
     url(r'^$', 'direct_to_template', {'template':'home.html'}),
+    url(r'^welcome/$', 'direct_to_template', {'template':'welcome.html'}),
+    url(r'^about/$', 'direct_to_template', {'template':'about.html'}),
 
     url(r'^logout/$', logout, {'next_page' : '/'}),
 
 	url(r'^facebook/', include('django_facebook.urls')),
 	url(r'^accounts/', include('django_facebook.auth_urls')),
-
-    #url(r'^profile/', include('radiotik.profile.urls')),
     
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
